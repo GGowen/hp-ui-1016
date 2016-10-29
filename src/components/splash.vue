@@ -1,6 +1,7 @@
 <template>
   {{hideSelf}}
   <div
+    id="splash-screen"
     class="splash-wrap fader"
     v-if="display">
     <div class="splash-logo top">
@@ -44,8 +45,8 @@
   }
 
   .fader {
-    -webkit-animation: fadeinout 5s linear forwards;
-    animation: fadeinout 5s linear forwards;
+    -webkit-animation: fadeinout 3s linear forwards;
+    animation: fadeinout 3s linear forwards;
   }
 
   @-webkit-keyframes fadeinout {

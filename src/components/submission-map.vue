@@ -1,6 +1,5 @@
 <template>
-  <div class="submission-map">
-    <h4>Submission Map</h4>
+  <div id="map-container" class="submission-map">
     <div id="map"></div>
     <button
       class="rate-your-treat"
@@ -10,6 +9,7 @@
 <style scoped>
   .submission-map {
     border: 1px solid #666;
+    display: none;
     margin: 10px;
   }
 
