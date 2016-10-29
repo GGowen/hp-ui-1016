@@ -1,5 +1,21 @@
-.DS_Store
-node_modules
 .yo-rc.json
+
+# Logs
+logs
 *.log
+npm-debug.log*
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Webpack Bundling
+dist/**
+
+# IntelliJ
 .idea
