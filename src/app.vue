@@ -16,12 +16,19 @@
           <li><a href="#">Separated link</a></li>
         </ul>
       </dropdown>
+
+      <submission-map></submission-map>
     </div>
   </div>
 </template>
-
+<style>
+  * {
+    box-sizing: border-box;
+  }
+</style>
 <script>
   import { dropdown } from 'vue-strap/dist/vue-strap.js'
+  import submissionMap from './components/submission-map.vue'
   export default {
     replace: false,
   	data() {
@@ -30,7 +37,8 @@
       }
     },
     components: {
-      dropdown
+      dropdown,
+      'submission-map': submissionMap
     },
   }
 </script>
