@@ -11,7 +11,7 @@ class FetchLibrary {
     });
 
     return fetch(requestConfig)
-      .then((response) => response.blob())
+      .then((response) => response.json())
       .then(callback);
   }
 
@@ -19,14 +19,14 @@ class FetchLibrary {
     const requestUrl = apiUrl + url;
     const requestConfig = new Request(requestUrl, {
       cache: 'default',
-      body: body || {},
+      body: JSON.stringify(body || {}),
       headers: new Headers(),
       method: 'POST',
       mode: 'cors'
     });
 
     return fetch(requestConfig)
-      .then((response) => response.blob())
+      .then((response) => response.json())
       .then(callback);
   }
 }
