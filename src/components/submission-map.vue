@@ -10,6 +10,8 @@
   }
 </style>
 <script>
+  import HouseholdsService from '../services/households.js';
+
   const gmApiKey = 'AIzaSyC0J8UNndfRHIgEQNmDIxc-cgiSd_-9wgY';
   const gmCallback = 'initMap';
   const gmId = 'GoogleMapsApi';
@@ -21,31 +23,33 @@
 
       // Do not insert multiple times
       if (elementExists) {
-        return
+        return;
       }
 
       window.initMap = SubmissionMap.initMap;
 
-      console.log('Inserting Google Maps API JavaScript...')
-      let el = document.createElement('script')
-      el.setAttribute('id', gmId)
-      el.setAttribute('type', 'text/javascript')
-      el.setAttribute('src', gmUrl)
-      document.getElementsByTagName('head')[0].appendChild(el)
+      console.log('Inserting Google Maps API JavaScript...');
+      let el = document.createElement('script');
+      el.setAttribute('id', gmId);
+      el.setAttribute('type', 'text/javascript');
+      el.setAttribute('src', gmUrl);
+      document.getElementsByTagName('head')[0].appendChild(el);
     }
 
     static initMap() {
-      console.log('Initialising map...')
+      HouseholdsService.fetchAll(function (data) {
+        console.log('Fetched households: ', data);
+      });
     }
   }
 
   SubmissionMap.attachScript()
 
-  export default{
+  export default {
     data() {
       return {
         gmUrl: gmUrl
-      }
+      };
     }
-  }
+  };
 </script>
