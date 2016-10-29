@@ -22,7 +22,7 @@ class HouseholdsService {
   // GET /api/household/:long/:lat/s
   static fetch(callback) {
     LocationLib.get(function (location) {
-      const url = `/api/household/${location.long}/${location.lat}/s`;
+      const url = `/api/households/${location.long}/${location.lat}/s`;
       FetchLib.get(url, function (response) {
         console.log('fetch response: ', response);
         callback(response);
@@ -33,7 +33,7 @@ class HouseholdsService {
   // GET /api/households/:long/:lat/l
   static fetchAll(callback) {
     LocationLib.get(function (location) {
-      const url = `/api/household/${location.long}/${location.lat}/l`;
+      const url = `/api/households/${location.long}/${location.lat}/l`;
       FetchLib.get(url, function (response) {
         console.log('fetch all response: ', response);
         callback(response);
