@@ -2,7 +2,7 @@
   <div class="main container">
     <splash></splash>
 
-    <div style="display:none;">
+    <div>
       <input type="text" v-model="text" />
       <div class="hello">Hello {{ text }}!</div>
       <div class="text-center">
