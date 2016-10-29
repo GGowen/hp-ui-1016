@@ -1,23 +1,27 @@
 <template>
   <div class="main container">
-    <input type="text" v-model="text" />
-    <div class="hello">Hello {{ text }}!</div>
-    <div class="text-center">
-      <dropdown>
-        <button type="button" class="btn btn-success" data-toggle="dropdown">
-          Welcome
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </dropdown>
+    <splash></splash>
 
-      <submission-map></submission-map>
+    <div>
+      <input type="text" v-model="text" />
+      <div class="hello">Hello {{ text }}!</div>
+      <div class="text-center">
+        <dropdown>
+          <button type="button" class="btn btn-success" data-toggle="dropdown">
+            Welcome
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </dropdown>
+
+        <submission-map></submission-map>
+      </div>
     </div>
   </div>
 </template>
@@ -29,6 +33,7 @@
 <script>
   import { dropdown } from 'vue-strap/dist/vue-strap.js'
   import submissionMap from './components/submission-map.vue'
+  import splash from './components/splash.vue'
   export default {
     replace: false,
   	data() {
@@ -38,6 +43,7 @@
     },
     components: {
       dropdown,
+      splash,
       'submission-map': submissionMap
     },
   }
