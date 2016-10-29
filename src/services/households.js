@@ -19,10 +19,10 @@ class HouseholdsService {
 
   }
 
-  // GET /api/household/:long/:lat/s
+  // GET /api/household/:long/:lat/S
   static fetch(callback) {
     LocationLib.get(function (location) {
-      const url = `/api/households/${location.long}/${location.lat}/s`;
+      const url = `/api/households/${location.long}/${location.lat}/S`;
       FetchLib.get(url, function (response) {
         console.log('fetch response: ', response);
         callback(response);
@@ -30,10 +30,10 @@ class HouseholdsService {
     });
   }
 
-  // GET /api/households/:long/:lat/l
+  // GET /api/households/:long/:lat/L
   static fetchAll(callback) {
     LocationLib.get(function (location) {
-      const url = `/api/households/${location.long}/${location.lat}/l`;
+      const url = `/api/households/${location.long}/${location.lat}/L`;
       FetchLib.get(url, function (response) {
         console.log('fetch all response: ', response);
         callback(response);
