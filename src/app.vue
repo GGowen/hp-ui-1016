@@ -1,28 +1,7 @@
 <template>
-  <div class="main container">
+  <div id="main" class="main container">
     <splash></splash>
-
-    <div>
-      <input type="text" v-model="text" />
-      <div class="hello">Hello {{ text }}!</div>
-      <div class="text-center">
-        <dropdown>
-          <button type="button" class="btn btn-success" data-toggle="dropdown">
-            Welcome
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </dropdown>
-
-        <submission-map></submission-map>
-      </div>
-    </div>
+    <submission-map></submission-map>
   </div>
 </template>
 <style>
@@ -34,6 +13,17 @@
   import { dropdown } from 'vue-strap/dist/vue-strap.js'
   import submissionMap from './components/submission-map.vue'
   import splash from './components/splash.vue'
+
+  setTimeout(function () {
+    console.log('Removing splash screen..');
+    let mainElm = document.getElementById("main");
+    let splashScreenElm = document.getElementById("splash-screen");
+    let garbage = mainElm.removeChild(splashScreenElm);
+
+    let mapContainerElm = document.getElementById("map-container");
+    mapContainerElm.style.display = 'block';
+  }, 3000);
+
   export default {
     replace: false,
   	data() {
